@@ -13,6 +13,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.myapp.R
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CustomButton
@@ -22,7 +24,7 @@ import com.example.myapp.ui.theme.poppins
 
 
 @Composable
-fun WelcomeScreen(modifier: Modifier = Modifier) {
+fun WelcomeScreen(modifier: Modifier, navController: NavController) {
     Background {
         Column(
             modifier = modifier
@@ -83,7 +85,7 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
                     bgColor = Color(0xFF1F41BB),
                     textColor = Color.White,
                     fontSize = 20.sp,
-                    onClick = { /* action */ },
+                    onClick = { navController.navigate(route = "login") },
                     hasShadow = true
                 )
 
@@ -97,18 +99,10 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
                     bgColor = Color.White,
                     textColor = Color.Black,
                     fontSize = 20.sp,
-                    onClick = { /* action */ },
+                    onClick = { navController.navigate(route = "register")},
                     hasShadow = false
                 )
             }
         }
-    }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun WelcomeScreenPreview() {
-    MyAppTheme {
-        WelcomeScreen()
     }
 }

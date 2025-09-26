@@ -10,6 +10,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.Navigator
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CommonTextField
 import com.example.myapp.ui.components.CustomButton
@@ -18,7 +20,7 @@ import com.example.myapp.ui.theme.poppins
 
 
 @Composable
-fun SignUpScreen(modifier: Modifier = Modifier) {
+fun SignUpScreen(modifier: Modifier, navController: NavController){
     Background {
         Column(
             modifier = modifier
@@ -94,7 +96,7 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
                 bgColor = Color.White,
                 textColor = Color(0xFF494949),
                 fontSize = 14.sp,
-                onClick = { /* action */ },
+                onClick = { navController.navigate(route = "login") },
                 hasShadow = false
             )
 
