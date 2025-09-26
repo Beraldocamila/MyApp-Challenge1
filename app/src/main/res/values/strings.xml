@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">MyApp</string>
+    <string name="welcome_screen_title">Discover your\nDream Job Here</string>
+    <string name="welcome_screen_subtitle">Explore all the existing job roles based on your\ninterest and study major</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+
+    <string name="login_title">Login here</string>
+    <string name="login_subtitle">Welcome back you have\nbeen missed</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="btn_sign_in">Sign in</string>
+    <string name="btn_create_account">Create New Account</string>
+
+    <string name="sign_up_title">Create Account</string>
+    <string name="sign_up_subtitle">Create an account so you can explore all the\nexisting jobs</string>
+    <string name="btn_sign_up">Sign up</string>
+    <string name="btn_have_account">Already have an account</string>
+
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_password">Password</string>
+    <string name="placeholder_confirm">Confirm password</string>
 </resources>

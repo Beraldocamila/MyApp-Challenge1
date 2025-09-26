@@ -6,11 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.myapp.R
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CommonTextField
 import com.example.myapp.ui.components.CustomButton
@@ -30,7 +32,7 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
         ) {
             // Title
             Text(
-                text = "Login here",
+                text = stringResource(R.string.login_title),
                 color = Color(0xFF1F41BB),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Bold,
@@ -43,7 +45,7 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
 
             // Subtitle
             Text(
-                text = "Welcome back you've\nbeen missed",
+                text = stringResource(R.string.login_subtitle),
                 fontFamily = poppins,
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 20.sp,
@@ -57,17 +59,17 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
             CommonTextField(
                 value = "",
                 onValueChange = {},
-                placeholderText = "Email"
+                placeholderText = stringResource(R.string.placeholder_email)
             )
 
             CommonTextField(
                 value = "",
                 onValueChange = {},
-                placeholderText = "Password"
+                placeholderText = stringResource(R.string.placeholder_password)
             )
 
             Text(
-                text = "Forgot your password?",
+                text = stringResource(R.string.forgot_password),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Medium,
                 fontSize = 16.sp,
@@ -80,7 +82,7 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
             Spacer(modifier = Modifier.height(30.dp))
 
             CustomButton(
-                text = "Sign in",
+                text = stringResource(R.string.btn_sign_in),
                 width = 357.dp,
                 height = 50.dp,
                 bgColor = Color(0xFF1F41BB),
@@ -93,7 +95,7 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
             Spacer(modifier = Modifier.height(30.dp))
 
             CustomButton(
-                text = "Create New Account",
+                text = stringResource(R.string.btn_create_account),
                 width = 200.dp,
                 height = 41.dp,
                 bgColor = Color.White,

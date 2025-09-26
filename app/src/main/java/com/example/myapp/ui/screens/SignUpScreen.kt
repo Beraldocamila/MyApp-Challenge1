@@ -6,12 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.Navigator
+import com.example.myapp.R
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CommonTextField
 import com.example.myapp.ui.components.CustomButton
@@ -31,7 +33,7 @@ fun SignUpScreen(modifier: Modifier, navController: NavController){
         ) {
             // Title
             Text(
-                text = "Create Account",
+                text = stringResource(R.string.sign_up_title),
                 color = Color(0xFF1F41BB),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Bold,
@@ -44,7 +46,7 @@ fun SignUpScreen(modifier: Modifier, navController: NavController){
 
             // Subtitle
             Text(
-                text = "Create an account so you can explore all the\nexisting jobs",
+                text = stringResource(R.string.sign_up_subtitle),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Medium,
                 fontSize = 16.sp,
@@ -58,26 +60,26 @@ fun SignUpScreen(modifier: Modifier, navController: NavController){
             CommonTextField(
                 value = "",
                 onValueChange = {},
-                placeholderText = "Email"
+                placeholderText = stringResource(R.string.placeholder_email)
             )
 
             CommonTextField(
                 value = "",
                 onValueChange = {},
-                placeholderText = "Password"
+                placeholderText = stringResource(R.string.placeholder_password)
             )
 
             CommonTextField(
                 value = "",
                 onValueChange = {},
-                placeholderText = "Confirm Password"
+                placeholderText = stringResource(R.string.placeholder_confirm)
             )
 
 
             Spacer(modifier = Modifier.height(30.dp))
 
             CustomButton(
-                text = "Sign up",
+                text = stringResource(R.string.btn_sign_up),
                 width = 357.dp,
                 height = 50.dp,
                 bgColor = Color(0xFF1F41BB),
@@ -90,7 +92,7 @@ fun SignUpScreen(modifier: Modifier, navController: NavController){
             Spacer(modifier = Modifier.height(30.dp))
 
             CustomButton(
-                text = "Already have an account",
+                text = stringResource(R.string.btn_have_account),
                 width = 250.dp,
                 height = 41.dp,
                 bgColor = Color.White,

@@ -8,17 +8,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import com.example.myapp.R
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CustomButton
-import com.example.myapp.ui.theme.MyAppTheme
 import com.example.myapp.ui.theme.poppins
 
 
@@ -46,7 +44,7 @@ fun WelcomeScreen(modifier: Modifier, navController: NavController) {
 
             // Title
             Text(
-                text = "Discover your\nDream Job Here",
+                text = stringResource(R.string.welcome_screen_title),
                 color = Color(0xFF1F41BB),
                 fontFamily = poppins,
                 fontWeight = FontWeight.SemiBold,
@@ -60,7 +58,7 @@ fun WelcomeScreen(modifier: Modifier, navController: NavController) {
 
             // Subtitle
             Text(
-                text = "Explore all the existing job roles based on your\ninterest and study major",
+                text = stringResource(R.string.welcome_screen_subtitle),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Normal,
                 fontSize = 14.sp,
@@ -79,7 +77,7 @@ fun WelcomeScreen(modifier: Modifier, navController: NavController) {
             ) {
                 // Login Button
                 CustomButton(
-                    text = "Login",
+                    text = stringResource(R.string.btn_login),
                     width = 150.dp,
                     height = 50.dp,
                     bgColor = Color(0xFF1F41BB),
@@ -93,7 +91,7 @@ fun WelcomeScreen(modifier: Modifier, navController: NavController) {
 
                 // Register Button
                 CustomButton(
-                    text = "Register",
+                    text = stringResource(R.string.btn_register),
                     width = 150.dp,
                     height = 50.dp,
                     bgColor = Color.White,
