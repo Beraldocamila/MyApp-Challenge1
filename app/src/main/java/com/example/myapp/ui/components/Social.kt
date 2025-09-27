@@ -1,5 +1,6 @@
 package com.example.myapp.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,9 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.myapp.ui.theme.poppins
 import com.example.myapp.R
-import androidx.compose.foundation.Image
+import com.example.myapp.ui.theme.poppins
 
 @Composable
 fun Social() {

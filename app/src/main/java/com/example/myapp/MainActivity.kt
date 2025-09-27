@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                     WelcomeScreen(modifier = Modifier.padding(it), navController = navController)
+                     // WelcomeScreen(modifier = Modifier.padding(it), navController = navController)
                     // LoginScreen(modifier = Modifier.padding(it))
                     // SignUpScreen(modifier = Modifier.padding(it))
                 }

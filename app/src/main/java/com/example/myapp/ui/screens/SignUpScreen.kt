@@ -1,6 +1,12 @@
 package com.example.myapp.ui.screens
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,7 +18,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.Navigator
 import com.example.myapp.R
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CommonTextField
@@ -98,7 +103,11 @@ fun SignUpScreen(modifier: Modifier, navController: NavController){
                 bgColor = Color.White,
                 textColor = Color(0xFF494949),
                 fontSize = 14.sp,
-                onClick = { navController.navigate(route = "login") },
+                onClick = {
+                    navController.navigate("login") {
+                        popUpTo("register") { inclusive = true }
+                    }
+                },
                 hasShadow = false
             )
 

@@ -1,7 +1,15 @@
 package com.example.myapp.ui.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,7 +26,6 @@ import com.example.myapp.R
 import com.example.myapp.ui.components.Background
 import com.example.myapp.ui.components.CustomButton
 import com.example.myapp.ui.theme.poppins
-
 
 
 @Composable
@@ -83,7 +90,11 @@ fun WelcomeScreen(modifier: Modifier, navController: NavController) {
                     bgColor = Color(0xFF1F41BB),
                     textColor = Color.White,
                     fontSize = 20.sp,
-                    onClick = { navController.navigate(route = "login") },
+                    onClick = {
+                        navController.navigate(route = "login") {
+                            popUpTo("welcome") { inclusive = true }
+                        }
+                    },
                     hasShadow = true
                 )
 
@@ -97,7 +108,11 @@ fun WelcomeScreen(modifier: Modifier, navController: NavController) {
                     bgColor = Color.White,
                     textColor = Color.Black,
                     fontSize = 20.sp,
-                    onClick = { navController.navigate(route = "register")},
+                    onClick = {
+                        navController.navigate(route = "register") {
+                            popUpTo("welcome") { inclusive = true }
+                        }
+                    },
                     hasShadow = false
                 )
             }
