@@ -9,6 +9,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -28,6 +32,12 @@ import com.example.myapp.ui.theme.poppins
 
 @Composable
 fun LoginScreen(modifier: Modifier, navController: NavController) {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
+    var emailError by remember { mutableStateOf(false) }
+    var passwordError by remember { mutableStateOf(false) }
+
     Background {
         Column(
             modifier = modifier
@@ -63,15 +73,25 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
             Spacer(modifier = Modifier.height(90.dp))
 
             CommonTextField(
-                value = "",
-                onValueChange = {},
-                placeholderText = stringResource(R.string.placeholder_email)
+                value = email,
+                onValueChange = {
+                    email = it
+                    emailError = false
+                },
+                placeholderText = stringResource(R.string.placeholder_email),
+                isError = emailError,
+                errorMessage = stringResource(R.string.error_email)
             )
 
             CommonTextField(
-                value = "",
-                onValueChange = {},
-                placeholderText = stringResource(R.string.placeholder_password)
+                value = password,
+                onValueChange = {
+                    password = it
+                    passwordError = false
+                },
+                placeholderText = stringResource(R.string.placeholder_password),
+                isError = passwordError,
+                errorMessage = stringResource(R.string.error_password)
             )
 
             Text(
@@ -94,7 +114,21 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
                 bgColor = Color(0xFF1F41BB),
                 textColor = Color.White,
                 fontSize = 20.sp,
-                onClick = { /* action */ },
+                onClick = {
+                    var hasError = false
+                    if (email.isBlank()) {
+                        emailError = true
+                        hasError = true
+                    }
+                    if (password.isBlank()) {
+                        passwordError = true
+                        hasError = true
+                    }
+
+                    if (!hasError) {
+                        /* action */
+                    }
+                },
                 hasShadow = true
             )
 

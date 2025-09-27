@@ -1,7 +1,9 @@
 package com.example.myapp.ui.components
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
@@ -24,31 +26,44 @@ fun CommonTextField(
     fontSize: TextUnit = 16.sp,
     width: Float = 357f,
     height: Float = 55f,
+    isError: Boolean = false,
+    errorMessage: String? = null
 ) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        placeholder = {
-            Text(
-                text = placeholderText,
-                fontFamily = poppins,
-                fontWeight = FontWeight.Medium,
-                fontSize = fontSize,
-                color = Color(0xFF626262),
+    Column {
+        OutlinedTextField(
+            value = value,
+            onValueChange = onValueChange,
+            placeholder = {
+                Text(
+                    text = placeholderText,
+                    fontFamily = poppins,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = fontSize,
+                    color = Color(0xFF626262),
+                )
+            },
+            singleLine = true,
+            modifier = Modifier
+                .width(width.dp)
+                .height(height.dp),
+            shape = RoundedCornerShape(10.dp),
+            isError = isError,
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color(0xFFF1F4FF),
+                unfocusedContainerColor = Color(0xFFF1F4FF),
+                focusedIndicatorColor = if (isError) Color.Red else Color(0xFF1F41BB),
+                unfocusedIndicatorColor = if (isError) Color.Red else Color.Transparent,
+                disabledIndicatorColor = Color.Transparent
             )
-        },
-        singleLine = true,
-        modifier = Modifier
-            .width(width.dp)
-            .height(height.dp),
-        shape = RoundedCornerShape(10.dp),
-        colors = TextFieldDefaults.colors(
-            focusedContainerColor = Color(0xFFF1F4FF),
-            unfocusedContainerColor = Color(0xFFF1F4FF),
-            focusedIndicatorColor = Color(0xFF1F41BB),
-            unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent
         )
-    )
-    Spacer(modifier = Modifier.height(25.dp))
+        if (isError && errorMessage != null) {
+            Text(
+                text = errorMessage,
+                color = Color.Red,
+                fontSize = 12.sp,
+                modifier = Modifier.padding(top = 4.dp, start = 8.dp)
+            )
+        }
+        Spacer(modifier = Modifier.height(25.dp))
+    }
 }
